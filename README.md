@@ -1,5 +1,5 @@
 # Engeto Academy -project-2
-Project #1 (HTML, CSS, JS) of Front-end developer Academy on Engeto.cz
+Project #2 (HTML, CSS, JS) of Front-end developer Academy on Engeto.cz
 
 This is a solution to the [Engeto Academy - Project 2](https://engeto.cz/webova-akademie/). 
 ## Table of contents
@@ -8,7 +8,7 @@ This is a solution to the [Engeto Academy - Project 2](https://engeto.cz/webova-
 - [Author](#author)
 
 ## Screenshot
-<img src="design/design-preview.jpg" alt="Engeto Project 2">
+ <!-- <img src="design/design-preview.jpg" alt="Engeto Project 2"> -->
 
 ## Live
 - Live Site URL: ➡️ [www. petrb-engeto-academy-1.netlify.app/](https://petrb-engeto-academy-1.netlify.app) ⬅️
