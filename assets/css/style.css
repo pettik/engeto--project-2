@@ -208,7 +208,7 @@ img {
 
 .home__container{
   position:relative;
-  height: 60%;
+  height: 55%;
   background: var(--radial-color);
   display:grid;
   justify-items: center;
@@ -289,7 +289,7 @@ img {
 .home__data{
   font-family: var(--second-font);
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: center;
   margin-inline: 1.5rem
 }
