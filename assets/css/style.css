@@ -231,11 +231,13 @@ img {
 
 .home__stone{
   z-index: var(--z-stone);
+  
 }
 
 .home__moon{
   bottom:2rem;
   width: initial;
+  filter: drop-shadow(0 0 8px var(--white-color));
 }
 
 .home__stars{
