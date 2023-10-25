@@ -50,8 +50,7 @@ window.addEventListener('scroll', bgHeader);
 gsap.from('.home__clouds', 1.5, {opacity: 0, y: -300, delay: .2})
 gsap.from('.home__stars', 1.5, {opacity: 0, y: -300, delay: .4})
 gsap.from('.home__stone', 1.5, {opacity: 0, y: 300, delay: .2, ease: 'elastic.out(1, .5)'})
-gsap.from('.home__castle', 1.5, {opacity: 0, y: -300, delay: .6, ease: 'bounce.out'})
-gsap.from('.home__moon', 1.5, {opacity: 0, y: 300, delay: 1.5, ease: 'elastic.out(1, .5)'})
+gsap.from('.home__castle', 1.5, {opacity: 0, y: -300, delay: .6, ease: 'elastic.out(1, .5)'})
+gsap.from('.home__moon', 1.5, {opacity: 0, y: 300, delay: 1.5, ease: 'bounce.out'})
 gsap.from('.home__titles', 1.5, {opacity: 0, y: -300, delay: 1.5, ease: 'elastic.out(1, .5)'})
-
 gsap.from('.home__data', 1.5, {opacity: 0, y: 200, delay: 2, ease: 'elastic.out(1, .5)'})
