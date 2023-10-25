@@ -11,7 +11,7 @@ This is a solution to the [Engeto Academy - Project 2](https://engeto.cz/webova-
  <!-- <img src="design/design-preview.jpg" alt="Engeto Project 2"> -->
 
 ## Live
-- Live Site URL: ➡️ [www. petrb-engeto-academy-1.netlify.app/](https://petrb-engeto-academy-1.netlify.app) ⬅️
+- Live Site URL: ➡️ [www. petrb-engeto-academy-2.netlify.app/](https://petrb-engeto-academy-2.netlify.app) ⬅️
 
 ## Author
 
