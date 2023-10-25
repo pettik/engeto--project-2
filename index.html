@@ -5,13 +5,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
       <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+      <link rel="shortcut icon" href="assets/img/engeto_favicon.png" type="image/x-icon">
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/style.css">
 
       <meta
       name="description"
@@ -22,19 +22,75 @@
    <body>
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
+        <nav class="nav container">
+           <a href="#" class="nav__logo">Harry Potter</a>
 
-      </header>
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li class="nav__item">
+                    <a href="#" class="nav__link">O Engetu</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="#" class="nav__link">Přihláška</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="#" class="nav__link">Kouzla</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="#" class="nav__link">Kontakty</a>
+                 </li>
+              </ul>
+
+              <!-- Close button -->
+              <div class="nav__close" id="nav-close">
+                 <i class="ri-close-line"></i>
+              </div>
+           </div>
+
+           <!-- Toggle button -->
+           <div class="nav__toggle" id="nav-toggle">
+              <i class="ri-menu-4-line"></i>
+              
+
+           </div>
+        </nav>
+     </header>
+
 
       <!--==================== MAIN ====================-->
       <main class="main">
          <!--==================== HOME ====================-->
-         <section class="home">
+            <section class="home">
+            <div class="home__container">
+               <img src="assets/img/home__stars.png" alt="home image" class="home__stars">
+               <img src="assets/img/home__clouds.png" alt="home image" class="home__clouds">
+               <img src="assets/img/home__moon.png" alt="home image" class="home__moon">
+               <img src="assets/img/home__castle.png" alt="home image" class="home__castle">
+               <img src="assets/img/home__stone.png" alt="home image" class="home__stone">
 
+               <div class="home__titles">
+                  <h1 class="home__title">Vítej kouzelníku</h1>
+                  <h2 class="home__subtitle">v Engeto Akademii</h2>
+               </div>
+            </div>
+
+            <div class="home__data">
+               <h3 class="home__data-title">FRONT-END DEVELOPER AKADEMIE</h3>
+               <p class="home__description">
+                  JavaScript, HTML a CSS jsou nepostradatelnou součástí každého webu. Tyto technologie jsou snadné na pochopení a jednoduché webové stránky díky nim dokážeš vytvořit už za pár týdnů. 
+               </p>
+               <a href="https://engeto.cz/webova-akademie/" target="_blank" class="home__button"><img src="assets/img/button.svg" alt="button">
+               <span>Přihlas se</span></a>
+
+            </div>
          </section>
       </main>
 
       <!--=============== GSAP ===============-->
-      <script src=""></script>
+      <script src="assets/js/gsap.min.js"></script>
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>

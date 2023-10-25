@@ -1,28 +1,36 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Montserrat:wght@400;500&display=swap");
 
+
+@font-face {
+    font-family: PotterFont;
+    src: url(../font/parry-hotter.regular.ttf);
+}
+
 /*=============== VARIABLES CSS ===============*/
 :root {
-  --header-height: 3.5rem;
+  --header-height: 4rem;
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(185, 100%, 48%);
+  --first-color: hsl(209, 96%, 64%);
+  --second-color: hsl(57, 83%, 55%);
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(222, 100%, 2%);
   --radial-color: radial-gradient(52% 52% at 50% 50%,
-                       hsl(202, 90%, 38%) 0%,
+                       hsl(202, 95%, 29%) 0%,
                        hsl(222, 100%, 6%) 100%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
   --second-font: "Jolly Lodger", cursive;
+  --potter-font: "PotterFont", cursive;
   --biggest-font-size: 3rem;
   --big-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
+  --h2-font-size: 1.65rem;
+  --normal-font-size: 1.4rem;
+  --small-font-size: 1rem;
   
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -30,20 +38,36 @@
 
   /*========== z index ==========*/
   --z-tooltip: 10;
+  --z-behind-castle:96;
+  --z-castle: 97;
+  --z-stone: 98;
   --z-fixed: 100;
 }
 
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1150px) {
   :root {
-    --biggest-font-size: 9rem;
+    --biggest-font-size: 6rem;
     --big-font-size: 3.5rem;
-    --h2-font-size: 1.5rem;
-    --normal-font-size: 1rem;
+    --h2-font-size: 1.85rem;
+    --normal-font-size: 1.7rem;
     --small-font-size: .875rem;
   }
 }
 
+
+/*=============== ANIMATION ===============*/
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
@@ -75,7 +99,7 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
-  margin-inline: 1.5rem;
+  margin-inline: 2.5rem;
 }
 
 .main {
@@ -83,28 +107,333 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+    position:fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background:transparent;;
+    z-index: var(--z-fixed);
+    transition: background-color .3s;
+  }
+  
+  .nav{
+    height: var(--header-height);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__logo{
+    color:var(--white-color);
+    font-family: var(--potter-font);
+    font-size: var(--h2-font-size);
+    transition: color .3s;
+  }
+  
+  .nav__logo:hover{
+    /* text-shadow: 0 2px 8px var(--second-color); */
+    color:var(--second-color);
+  }
+  
+  
+  .nav__toggle,
+  .nav__close{
+    display:flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: visibility .3s;
+  }
 
 
-/* Navigation for mobile devices */
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width: 1150px){
+    .nav__menu{
+      position: fixed;
+      top: -100%;
+      left: 0;
+      /* background-color: var(--black-color); */
+      background: hsla(0,0%,0%,.8);
+      border-bottom-right-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+      width: 100%;
+      padding-block: 5rem 4.5rem;
+      transition: top .4s;
+    }
+  }
+  
+  .nav__list{
+    display:flex;
+    flex-direction: column;;
+    text-align: center;
+    row-gap: 3rem;
+  }
+  
+  .nav__link{
+    color: var(--white-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-medium);
+    transition: text-shadow .3s;
+  }
+  
+  
+  .nav__link:hover{
+    text-shadow: 0 2px 8px var(--first-color)
+  }
+  
+  .nav__close{
+    position: absolute;
+    top:1.5rem;
+    right: 2.5rem;
+  }
+  
+  /* Show menu */
+  .show-menu{
+    top:0;
+  }
 
-
-/* Show menu */
-
-
-/* Change background header */
+    /* Show toggle button */
+  .invisible{
+    visibility: hidden;
+  }
 
 
 /*=============== HOME ===============*/
+.home{
+  position:relative;
+  height: 100vh;
+  background-color: var(--black-color);
+}
+
+.home__container{
+  position:relative;
+  height: 60%;
+  background: var(--radial-color);
+  display:grid;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.home__container img{
+  position: absolute;
+}
+
+.home__stone,
+.home__castle{
+  bottom: 0;
+}
+
+
+.home__castle{
+  z-index: var(--z-castle);
+}
+
+.home__stone{
+  z-index: var(--z-stone);
+}
+
+.home__moon{
+  bottom:2rem;
+  width: initial;
+}
+
+.home__stars{
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home__clouds{
+  bottom:0;
+  left: 0;
+  width: 100%;
+  mix-blend-mode: lighten ;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* HERO TEXT */
+.home__titles{
+  position:absolute;
+  bottom:15rem;
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+}
+
+
+.home__title,
+.home__subtitle{
+  color: var(--black-color);
+  font-family: var(--potter-font);
+  font-weight: var(--font-regular);
+  text-shadow: 0 2px 8px var(--white-color);
+  z-index:var(--z-behind-castle);
+}
+
+.home__title{
+  font-size: var(--biggest-font-size);
+}
+.home__subtitle{
+  font-size: var(--big-font-size);
+  margin-top: -1.3rem;
+}
+
+.home__data{
+  font-family: var(--second-font);
+  position: absolute;
+  margin-top: 4rem;
+  text-align: center;
+  margin-inline: 1.5rem
+}
+
+.home__data-title{
+margin-bottom: 1rem;
+}
+
+.home__description{
+  margin-bottom: 2rem;
+}
+
+.home__button{
+  display:inline-grid;
+  position:relative;
+  place-items: center;
+  transition: filter .4s;
+}
+
+.home__button span{
+  position:absolute;
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+}
+
+.home__button:hover{
+  filter:drop-shadow(0 4px 24px hsla(212, 90%, 59%, 0.6));
+}
 
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 330px){
+  .container{
+    margin-inline: 1rem;
+  }
 
+  .home__container{
+    position:relative;
+    height: 40%;
+    background: var(--radial-color);
+    display:grid;
+    justify-items: center;
+    overflow: hidden;
+  }
+
+  .home__titles{
+    animation: none;
+    position:absolute;
+    margin-top:20rem;
+   bottom:10rem;
+    color:var(--white-color);
+    text-align: center;
+  }
+
+  .home__data{
+    bottom:2rem;
+  }
+}
 
 /* For medium devices */
 
+@media screen and (min-width: 576px){
+ 
+
+  .home__titles{
+    bottom:20rem;
+  }
+
+ 
+ .home__castle,
+ .home__stone{
+ right:0;
+ width:100%;
+ max-width:1080px;
+ }
+}
+
 
 /* For large devices */
+@media screen and (min-width: 800px){
+
+  .home__container{
+    height: 80%;
+  }
+  .home__titles {
+    top: 15rem;
+}
+}
+@media screen and (min-width: 1150px){
+    .container{
+      margin-inline: auto;
+    }
+    
+    .nav{
+      height: calc(var(--header-height) + 3rem);
+    }
+
+    .nav__logo{
+      font-size: var(--big-font-size);
+    }
+  
+    .nav__toggle,
+    .nav__close{
+      display:none;
+    }
+  
+    .nav__list{
+      flex-direction: row;
+      column-gap: 4rem;
+    }
+  
+    .home__container{
+      height: 100%;
+    }
+  
+    .home__titles{
+      animation: none;
+      width:100%;
+      top:40%;
+      left:50%;
+      transform:translate(-50%, -50%);
+    }
+
+    .home__title{
+      font-size: var(--biggest-font-size);
+    }
+    .home__subtitle{
+      font-size: var(--big-font-size);
+      margin-top: -4rem;
+    }
 
 
-/* For 2K resolutions (2048 x 1152) */
+    .home__data{
+      width:45%;
+      z-index: var(--z-fixed);
+      margin-top:0;
+      bottom:3rem;
+      background-color: hsla(0,0%,0%,.4);
+      border-radius: 1.5rem;;
+      padding:2rem;
+      box-shadow: 0 0 12px var(--first-color);
+    }
+
+    .home__data-title {
+      font-size: var(--big-font-size);
+  }
+  }
+
