@@ -198,6 +198,10 @@ img {
     visibility: hidden;
   }
 
+  /* Change background header */
+.bg-header{
+  background-color: var(--black-color);
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -208,7 +212,7 @@ img {
 
 .home__container{
   position:relative;
-  height: 55%;
+  height: 60%;
   background: var(--radial-color);
   display:grid;
   justify-items: center;
@@ -263,7 +267,7 @@ img {
 /* HERO TEXT */
 .home__titles{
   position:absolute;
-  bottom:15rem;
+  bottom:12rem;
   text-align: center;
   animation: float 6s ease-in-out infinite;
 }
