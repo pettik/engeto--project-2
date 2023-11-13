@@ -163,7 +163,7 @@ img {
   display: flex;
   flex-direction: column;
   text-align: center;
-  row-gap: 3rem;
+  row-gap: 2rem;
 }
 
 .nav__link {
@@ -284,7 +284,7 @@ img {
 .home__data {
   font-family: var(--second-font);
   position: absolute;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   text-align: center;
   margin-inline: 1.5rem;
 }
@@ -440,7 +440,7 @@ img {
   .home__titles {
     animation: none;
     width: 100%;
-    top: 40%;
+    top: 30%;
     left: 60%;
     transform: translate(-50%, -50%);
   }
