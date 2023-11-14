@@ -31,7 +31,7 @@ The aim of this work is to practice knowledge with media queries and to prepare 
 
 ## Screenshot
 
-<!-- <img src="design/design-preview.jpg" alt="Engeto Project 2"> -->
+<img src="assets/img/screenshot.jpg" alt="Engeto Project 2">
 
 ## Live
 
